@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import MovieCardsList from './MovieCardsList';
+import MovieCardsList from './MovieCardList';
 
 const profiles = [
   {
@@ -100,8 +100,11 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
-        <h1>How Popular is Your Favorite Movie?</h1>
-        <MovieCardsList profiles={profiles} movies={movies} users={users} />
+        
+          <div>
+             <h1>How Popular is Your Favorite Movie?</h1>
+              <MovieCardsList profiles={profiles} movies={movies} users={users} />
+              </div>
       </div>
     );
   }
