@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class MovieCard extends Component {
-    render() {
-        const { users, usersWhoLikedMovie, movieInfo } = this.props;
+const MovieCard = props => {
+        const { users, usersWhoLikedMovie, movieInfo } = props;
 
         return (
             <li key={movieInfo.id}>
@@ -25,7 +24,6 @@ class MovieCard extends Component {
                 )}
             </li>
         );
-    }
-}
+};
 
 export default MovieCard;

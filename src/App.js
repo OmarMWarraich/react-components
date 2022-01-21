@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import MovieCardsList from './MovieCardList';
+import MovieCardsList from './MovieCardsList';
 
 const profiles = [
   {
@@ -92,8 +92,8 @@ const movies = {
   },
 };
 
-class App extends Component {
-  render() {
+const App = () => {
+  
     return (
       <div>
         <header className="App-header">
@@ -101,13 +101,12 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
         
-          <div>
+          
              <h1>How Popular is Your Favorite Movie?</h1>
               <MovieCardsList profiles={profiles} movies={movies} users={users} />
-              </div>
+              
       </div>
     );
-  }
-}
+};
 
 export default App;

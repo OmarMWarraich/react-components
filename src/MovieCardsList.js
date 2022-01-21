@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MovieCard from './MovieCard';
 
-class MovieCardsList extends Component {
-    render() {
-        const { profiles, users, movies } = this.props;
+const MovieCardsList = props => {
+        const { profiles, users, movies } = props;
         const usersByMovie = {};
 
         profiles.forEach(profile => {
@@ -29,7 +28,6 @@ class MovieCardsList extends Component {
         Return JSX
         */
        return <u>{movieCards}</u>
-    }
-}
+};
 
 export default MovieCardsList;
