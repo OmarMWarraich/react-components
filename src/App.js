@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Dashboard from './Dashboard';
-
-/*
-Display a list of movies where each movie contains a list of users that favorited it.
-
-For detailed instructions, refer to instructions.md.
-*/
+import MovieCardsList from './MovieCardsList';
 
 const profiles = [
   {
@@ -50,7 +44,7 @@ const users = {
   },
   2: {
     id: 2,
-    name: 'Matthew Johnson',
+    name: 'Matthew Page',
     userName: 'mpage',
   },
   3: {
@@ -65,7 +59,7 @@ const users = {
   },
   5: {
     id: 5,
-    name: 'Lauren Carlson',
+    name: 'Lauren Johnson',
     userName: 'user123',
   },
   6: {
@@ -78,7 +72,7 @@ const users = {
 const movies = {
   1: {
     id: 1,
-    name: 'Planet Earth',
+    name: 'Planet Earth 1',
   },
   2: {
     id: 2,
@@ -99,35 +93,15 @@ const movies = {
 };
 
 class App extends Component {
-
-  constructor(props) {
-    super(props);
-    this.usersByMovie = {};
-
-    profiles.forEach(profile => {
-      const movieID = profile.favoriteMovieID;
-
-      if (this.usersByMovie[movieID]) {
-        this.usersByMovie[movieID].push(profile.userID);
-      } else {
-        this.usersByMovie[movieID] = [profile.userID];
-      }
-    });
-  }
-
   render() {
     return (
-      <div className="App">
+      <div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
-        <h2>How Popular is Your Favorite Movie?</h2>
-        <Dashboard 
-          usersByMovie={this.usersByMovie}
-          movies={movies}
-          users={users}
-        />
+        <h1>How Popular is Your Favorite Movie?</h1>
+        <MovieCardsList profiles={profiles} movies={movies} users={users} />
       </div>
     );
   }
